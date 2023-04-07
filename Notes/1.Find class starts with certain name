@@ -1,0 +1,11 @@
+To get all class that starts with a certain name we use
+ 
+ ^: starts With col
+ *: class=col
+ $: ends with col 
+	
+
+  [class^="col"] {
+    background-color: red;
+    float: left;
+  }

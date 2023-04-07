@@ -1,0 +1,5 @@
+when a property is divided into two line, they look weird mean spacing bw starting and ending is good but other side spacing is pretty bad
+- to solve we treat fragment element as same as initial element by this
+{box-decoration-break:clone}
+
+=> This makes the break element more align and feel right 

@@ -1,0 +1,74 @@
+// this one contains setting of container
+.composition {
+  width: 100%;
+  position: relative;
+
+  &__photo {
+    position: absolute;
+    width: 45%;
+    // x y blur solid
+    box-shadow: 0 1.2rem 2rem rgba($color-black, 0.25);
+
+    // to make one element(img) over another(img) use z-index
+    z-index: 10;
+    transition: all 0.3s;
+
+    // ooutline does not take space
+    // set the gap bw border and outline
+    outline-offset: 2rem;
+
+    @include respond(tab-land) {
+      width: 55%;
+      outline-offset: 0;
+    }
+    @include respond(tab-port) {
+      width: 35%;
+      outline-offset: 0;
+    }
+
+    &--p1 {
+      top: 0rem;
+      left: -3rem;
+      @include respond(tab-port) {
+        top: 0;
+        left: -2%;
+      }
+    }
+
+    &--p2 {
+      top: 8rem;
+      left: 9rem;
+
+      // position should be used with percent not rem
+      @include respond(tab-port) {
+        top: 20%;
+        left: 34%;
+        z-index: 20;
+        transform: scale(1.3);
+      }
+    }
+
+    &--p3 {
+      top: 15rem;
+      left: 20rem;
+      @include respond(tab-port) {
+        top: 0;
+        left: 67%;
+      }
+    }
+
+    &:hover {
+      z-index: 20;
+      transform: scale(1.1);
+      outline: 1rem solid $color-primary;
+      @include respond(tab-port) {
+        outline: none;
+      }
+    }
+  }
+
+  // to select the not hover images
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95) translateY(-4px);
+  }
+}

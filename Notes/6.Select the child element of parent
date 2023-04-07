@@ -1,0 +1,8 @@
+- Select all the direct child(only top most chil, not top most inner child) of section like container
+
+.section-features{
+  
+& > * {
+    transform: skewY(7deg);
+  }
+}

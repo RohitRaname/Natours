@@ -1,0 +1,5 @@
+if it just small adjustment to element like hovering or small up and down
+
+- we can use  { transform : translate }
+
+if we it is movement relative to parent element we can use position absolute

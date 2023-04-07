@@ -1,0 +1,4 @@
+- both needs to be reusable
+- component is for smaller element (btn,menu btn)
+- layout is for bigger element (header,sidebar,navbar,footer)
+- in page both of these comes

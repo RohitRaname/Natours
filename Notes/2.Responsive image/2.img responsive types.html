@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      img,
+      picture {
+        width: 40rem;
+        margin: auto;
+        display: inline-block;
+      }
+    </style>
+
+    <div>
+      <!-- MAX WIDTH TYPE , DIFFERENT IMAGE AT DIFFERENT WIDTH -->
+      <picture>
+        <source srcset="img/nat-1-large.jpg" media="(max-width:600px)" />
+        <source srcset="img/nat-2-large.jpg" media="(max-width: 900px)" />
+        <img src="img/nat-3-large.jpg" alt="" />
+      </picture>
+
+      <!-- DENSITY TYPE DEPEND ON SCREEN  SAME IMG BUT WITH DIFFERENT DENSITY-->
+      <img
+        srcset="
+          img/nat-1-large.jpg 1x, // 1K RESOLUTION
+          img/nat-2-large.jpg 2x, // 2K RESOLUTION
+          img/nat-3-large.jpg 3x // 3K RESOLUTION
+        "
+        alt="ther is somehting here"
+      />
+
+      <!-- SAME IMG DIFFRENT SIZE AT DIFFERENT WIDTH -->
+      <!-- --->>> sized media queries order matter, it first one is true, them
+      it will not move to second one to check if it alos true , so choose order
+      carefully1 -->
+      <img
+        srcset="img/nat-2-large.jpg 900w, img/nat-3-large.jpg 1200w"
+        sizes="(min-width:1200px ) 1200px, 900px"
+        alt="this is what it is"
+      />
+    </div>
+  </body>
+</html>

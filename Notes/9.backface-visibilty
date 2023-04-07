@@ -1,0 +1,4 @@
+- hide the backside of element with help of backface-visibility
+- solve shaking of element 
+
+{ backface-visibility: hidden }

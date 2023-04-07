@@ -1,0 +1,151 @@
+.cta {
+  transition: all 0.3s;
+  text-align: left;
+
+  // inside El, position properties is relative to this modal element
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+
+  // &:target {
+  //   @include show;
+  // }
+
+  // &:target &__overlay{background-color: red;}
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba($color-black, 0.8);
+    transition: all 0.2;
+  }
+
+  &__modal {
+    @include position-center;
+    z-index: 2000;
+    border-radius: $border-radius-bg;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+
+    background-color: whitesmoke;
+    align-items: center;
+    transition: all 0.4s 0.2s;
+  }
+
+  .hide &__modal {
+    transition: all 0.5s;
+    transform: translate(-50%, -50%) scale(0.25);
+  }
+
+  &__modal-box:last-child {
+    padding: 10rem auto;
+  }
+
+  &__img {
+    display: block;
+    width: 80%;
+  }
+
+  &__details {
+    width: 90%;
+  }
+
+  &__text-box {
+    margin-top: 1.6rem;
+    display: flex;
+    gap: 4.8rem;
+    font-size: $font-size-md;
+    line-height: $line-height-lg;
+    color: $color-black-l;
+  }
+
+  &__close-btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 3.6rem;
+    position: absolute;
+
+    // z-index work on position element
+    z-index: 4000;
+    top: 1rem;
+    right: 1rem;
+    height: 3rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 1.5rem;
+      left: 0;
+      content: "";
+      display: inline-block;
+      height: 0.2rem;
+      width: 100%;
+      background-color: $color-black-l;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      &::after {
+        background-color: green;
+      }
+      &::before {
+        background-color: green;
+      }
+    }
+  }
+
+  @include respond(tab-land) {
+    &__modal {
+      grid-template-columns: 1fr;
+      width: 50%;
+      overflow-x: hidden;
+      text-align: center;
+      top: 48%;
+    }
+
+    &__modal-box h1 {
+      font-size: 2.8rem;
+      text-align: center;
+    }
+
+    &__figure:first-child {
+      display: none;
+    }
+
+    &__figure img {
+      width: 100%;
+      margin-bottom: 1.2rem;
+    }
+
+    &__details {
+      width: 100%;
+      padding: 0 2.4rem;
+    }
+
+    &__details h5 {
+      font-size: 1.3rem;
+    }
+
+    &__description:first-child {
+      display: none;
+    }
+
+    &__button-box {
+      text-align: center;
+      margin-bottom: 1.2rem;
+
+      & button {
+        width: 70%;
+      }
+    }
+  }
+}

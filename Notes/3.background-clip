@@ -1,0 +1,8 @@
+absort background color into text color
+
+.heading-secondary {
+  background: linear-gradient(to right, $color-primary, $color-secondary--dark);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+  

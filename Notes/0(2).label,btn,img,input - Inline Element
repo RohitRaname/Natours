@@ -1,0 +1,4 @@
+These all are inline element so no padding and margin could be added
+
+How to solve?
+{display:inline-block or display:block}

@@ -1,0 +1,5 @@
+focus and valid are input class
+
+
+placeholder is pseudo element of input (both are at same level || both represent one body)
+- we can use adjacent sibling element(Next) + or abstract sibing element down the road

@@ -1,0 +1,17 @@
+// for higher resolution screen => phone usually have 2k screen
+// suitable image for phone => 1200px -> hero-small.jpg not img/hero.jpg
+//  em and rem are relative unit to width
+// @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+// , =>  is like or
+
+// min-resolution: 192dpi is 2k display
+ {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background: linear-gradient(
+        to bottom left,
+        rgba($color-tertiary--dark, 0.8),
+        rgba($color-tertiary--light, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
+}

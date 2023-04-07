@@ -1,0 +1,12 @@
+
+In section-cta
+<div class="cta hide" id="cta">
+
+In section-tours (anker tag)
+<a href="#cta" class="btn btn--full btn--buy">Buy now</a>
+
+when url have target elment in it => http://127.0.0.1:5500/index.html#cta
+
+.cta{
+    &:target{ do something}
+}

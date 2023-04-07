@@ -1,0 +1,6 @@
+background-blend mode is mixup of set color and set image
+
+.card{
+	background-blend:screen
+	}
+

@@ -1,0 +1,5 @@
+when pseudo classs is added to elment, the element prority increases and ELEMENT REMAINS THE SAME.
+
+cta:hover{
+    &__img{do something}
+}

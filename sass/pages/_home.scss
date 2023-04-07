@@ -1,0 +1,141 @@
+//  ALl html element css which cant be used again
+
+// Never set height, SET WIDTH, ===> HEIGHT WILL BE SET AUTOMATICALLY BY ITS CONTENT
+
+.section-about {
+  background-color: $color-grey--light-1;
+  padding: 15rem 2.4rem;
+  padding-top: 30rem;
+  margin-top: -16rem;
+  padding-bottom: 35rem;
+  font-size: $default-font-size;
+  @include respond(tab-port) {
+    padding: 29rem 3.2rem;
+    padding-bottom: 55rem;
+  }
+
+  @include respond(phone) {
+    padding-top: 24rem;
+    padding-bottom: 38rem;
+  }
+
+  .about-content {
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4.8rem;
+      align-items: flex-start;
+      @include respond(tab-port) {
+        gap: 4.4rem;
+        padding-bottom: 3rem;
+      }
+    }
+
+    //
+  }
+}
+
+.section-features {
+  font-size: $default-font-size;
+  background: $color-grey--light-1;
+  margin-top: -10rem;
+  padding: 20rem 0;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 6rem 0;
+  }
+  // Tilt the section
+  transform: skewY(-7deg);
+
+  background: linear-gradient(
+      to right,
+      rgba($color-primary, 0.8),
+      rgba($color-primary--light, 0.8)
+    ),
+    url(/img/nat-4.jpg);
+
+  // select all the direct child of section like container
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  padding: 20rem 0rem;
+  padding-bottom: 20rem;
+
+  @include respond(tab-port) {
+    padding: 14rem 0;
+
+    .container {
+      justify-items: center;
+    }
+  }
+
+  @include respond(phone) {
+    padding: 12rem 0;
+  }
+}
+
+.section-review {
+  font-size: $default-font-size;
+  padding: 0;
+  position: relative;
+  @include respond(tab-port) {
+    padding-bottom: 5rem;
+  }
+  .review-content {
+    & > * {
+      transform: skewX(-7deg);
+      @include respond(phone) {
+        transform: skewX(0);
+      }
+    }
+  }
+}
+
+.section-book {
+  padding: 10rem 0;
+  background-color: rgba($color-primary, 0.8);
+}
+
+// Not resuable content but its form is reusbale content
+.book {
+  // background: linear-gradient(
+  //     105deg,
+  //     rgba($color-white, 0.9) 0%,
+  //     rgba($color-white, 0.9) 50%,
+  //     transparent 100%
+  //   ),
+  //   url(../img/nat-10.jpg);
+
+  background-image: url(../img/nat-10.jpg);
+
+  background-size: cover;
+  box-shadow: $box-shadow-d;
+  border-radius: $border-radius-bg;
+  overflow-x: hidden;
+
+  &__form {
+    width: 55%;
+    height: inherit;
+    background-color: rgba($color-white, 0.9);
+    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
+    padding-top: 3.2rem;
+    padding-bottom: 4rem;
+
+    @include respond(tab-port) {
+      width: 80%;
+      clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+    }
+    @include respond(phone) {
+      width: 100%;
+      clip-path: none;
+      padding: 4.8rem 0;
+    }
+  }
+}

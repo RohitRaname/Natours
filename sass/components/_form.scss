@@ -1,0 +1,123 @@
+// This is reusable content
+// form but Its outer body was not reusable
+
+.form {
+  &__container {
+    font-size: $default-font-size;
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  &__box {
+    position: relative;
+
+    // can set inline element (input ,label ,link are inline element)
+    text-align: center;
+  }
+
+  &__label {
+    font-size: $font-size-md;
+    position: absolute;
+    top: 7rem;
+    left: 8.6rem;
+    transition: all 0.5s;
+
+    // we can sometime use transform instead of postion absolute
+  }
+
+  &__input {
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+    border-radius: $border-radius-md;
+    border: none;
+    width: 80%;
+    font-size: $default-font-size;
+    transition: all 0.1s;
+    border-bottom: 5px solid transparent;
+
+    @include respond(phone){
+     width: 90%; 
+    }
+
+    // placeholder -- Setting placeholder size and color
+    &::-webkit-input-placeholder {
+      font-size: $default-font-size;
+    }
+
+    &:-ms-input-placeholder {
+      font-size: $default-font-size;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 5px solid $color-tertiary--light;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      background-color: rgba($color-white, 0.5);
+    }
+
+    &:valid {
+      border-bottom: 5px solid $color-primary;
+    }
+  }
+
+  // next sibling Element of input
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  & div:nth-child(3) {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    cursor: pointer;
+  }
+  // Span element -> inline element
+  &__radio-btn {
+    display: inline-block;
+    transform: translateY(0.7rem);
+
+    // To set height, width, margin, padding in inline element we need to make the inline element a block element
+    height: 3rem;
+    width: 3rem;
+    border: 6px solid $color-primary;
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: "";
+
+      // To set height and width in inline element we need to make inline element into block element
+      display: inline-block;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: $color-primary;
+      border-radius: 50%;
+      @include position-center;
+      @include hide;
+      transition: opacity 0.5s;
+    }
+  }
+
+  @include respond(phone) {
+    &__box:nth-child(3) {
+      flex-direction: column;
+      gap: 2.4rem;
+      align-items: flex-start;
+      padding-left: 2.8rem;
+
+    }
+  }
+
+  // Sibling element's child pseudo element
+  &__radio-input:checked + &__radio-label &__radio-btn::after {
+    @include show;
+  }
+}

@@ -1,0 +1,68 @@
+// Main color
+$color-primary: #28b485;
+$color-primary--light: #63e6be;
+$color-primary--dark: #087f5b;
+
+$color-secondary: #228be6;
+$color-secondary--light: #74c0fc;
+$color-secondary--dark: #1864ab;
+
+$color-tertiary: #fd7e14;
+$color-tertiary--light: #ffc078;
+$color-tertiary--dark: #d9480f;
+
+// font coloe
+$color-grey--light-1: #f7f7f7;
+
+$color-white: #fff;
+$color-black: #000;
+$color-black-d: #333;
+$color-black-m: #555;
+$color-black-l: #777;
+
+// Grid
+$grid-width: 120rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6.4rem;
+
+$default-font-weight: 400;
+$font-weight-l: 500;
+$font-weight-m: 600;
+$font-weight-d: 700;
+
+// no manga from now on.
+
+// Font Size
+$default-font-size: 1.8rem;
+$font-size-sm: 1.4rem;
+$font-size-md: 1.6rem;
+$font-size-bg: 2rem;
+$font-size-lg: 2.2rem;
+
+// Line Height
+$default-line-height: 1;
+$line-height-sm: 1.05;
+$line-height-md: 1.2;
+$line-height-bg: 1.4;
+$line-height-lg: 1.6;
+
+// Box shadow
+$default-box-shadow: 1.2rem 2.4rem 4.8rem rgba($color-black-d, 0.15);
+$box-shadow-l: 1.2rem 2.4rem 4.8rem rgba($color-black-d, 0.1);
+$box-shadow-m: 1.2rem 2.4rem 4.8rem rgba($color-black-d, 0.2);
+$box-shadow-d: 1.2rem 2.4rem 4.8rem rgba($color-black-d, 0.3);
+
+// Border radius
+$default-border-radius: 9px;
+$border-radius-sm: 3px;
+$border-radius-md: 5px;
+$border-radius-bg: 11px;
+
+// Letter Spacing
+$letter-spacing-sm-p: 1px;
+$letter-spacing-md-p: 2px;
+$letter-spacing-bg-p: 3px;
+
+$letter-spacing-sm-n: -1px;
+$letter-spacing-md-n: -2px;
+$letter-spacing-bg-n: -3px;

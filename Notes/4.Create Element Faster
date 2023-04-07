@@ -1,0 +1,7 @@
+.composition>(img.compostion__photo.composition__photo--p1)*3
+
+<div class="composition">
+               <img src="" alt="" class="compostion__photo composition__photo--p1">
+               <img src="" alt="" class="compostion__photo composition__photo--p1">
+               <img src="" alt="" class="compostion__photo composition__photo--p1">
+</div>

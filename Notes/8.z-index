@@ -1,0 +1,2 @@
+    // to make one element(img) over another(img) use z-index
+    z-index: 10;

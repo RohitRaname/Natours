@@ -1,0 +1,8 @@
+dont set container height 
+
+=>> Set container width.
+
+popup-container{
+    width:80%;
+    height: dont set height >>> Height should be set by popup-container content
+}

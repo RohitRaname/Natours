@@ -1,0 +1,94 @@
+.review {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  &-box {
+    // background is a layer
+    background-color: rgba($color-white, 0.6);
+    display: flex;
+    gap: 4.8rem;
+    padding: 4.8rem 6.4rem;
+    width: 60vw;
+
+    @include respond(tab-port) {
+      width: 80vw;
+    }
+
+    @include respond(phone){
+     width: 90vw; 
+     padding: 2.4rem 3.2rem;
+     border-radius: 5px;
+     gap: 3.2rem;
+    }
+  }
+
+  &-shape {
+    position: relative;
+
+    &__img {
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      transform: skewX(7deg);
+      @include respond(phone) {
+        transform: skewX(0);
+      }
+      transition: all 0.3s;
+    }
+
+    &__name {
+      position: absolute;
+      font-size: $font-size-md;
+      left: 50%;
+      top: 70%;
+      opacity: 0;
+      transform: translate(-50%, -50%) skewX(7deg);
+      @include respond(phone) {
+        transform: translate(-50%, -50%) skewX(0deg);
+      }
+      transition: all 0.5s;
+      color: $color-white;
+      line-height: $line-height-sm;
+    }
+  }
+
+  &-box:hover &-shape__name {
+    top: 45%;
+    left: 50%;
+    opacity: 1;
+  }
+
+  &-box:hover &-shape__img {
+    filter: blur(3px) brightness(60%);
+    transform: scale(1.1) skewX(7deg);
+    @include respond(phone) {
+      transform: scale(1.1) skewX(0deg);
+    }
+  }
+
+  &-detail {
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+    transform: skewX(7deg);
+    @include respond(phone) {
+      transform: skewX(0deg);
+    }
+
+    &__title {
+      font-size: $font-size-bg;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: $color-black-d;
+    }
+
+    &__description {
+      line-height: $line-height-lg;
+      color: $color-black-l;
+    }
+  }
+}

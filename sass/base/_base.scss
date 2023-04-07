@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// to show selection color when someone want to copt the text
+::selection{
+  background: $color-primary;
+  color: $color-white;
+}
+
+body {
+  box-sizing: border-box;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+// This is the top most code box-sizing by other element will be inherit from the "html" element
+html {
+  /* default browser font size : 16px  */
+  /* font size prefer 10px so to do easy calculation [1rem = 10px] */
+  font-size: 62.5%;
+
+  /* force inherit as text are inherited by default to inherit other we force them */
+  box-sizing: inherit;
+
+  // Order big to small resolution as if small display satsifies the condition so also the big one as we are using the max(equal and less) so if big one are in last and the resolution is around 550px , big one device condition will overwrite the small one  so there is no reason it to be set into 600px so that why we placed the small one in last
+  @include respond(big-desktop) {
+    font-size: 75%; // 12px
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 44.25%;
+  }
+}
+

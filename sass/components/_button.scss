@@ -1,0 +1,108 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+    letter-spacing: 0.2rem;
+    border-radius: 10rem;
+    font-weight: $font-weight-l;
+
+    /* transistion is set on intial state */
+    transition: all 0.3s;
+    position: relative;
+
+    // Button element
+    cursor: pointer;
+    border: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 100px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+    z-index: -1;
+
+    /* Initial state of&::after */
+    transition: all 0.4s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    transform: translateY(-3px);
+
+    /* x coordinate then y coorinates  */
+    box-shadow: 0rem 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      /* set fading effect */
+      opacity: 0;
+
+      /* this element intial state is: &::after{}  */
+      transform: scaleX(1.4) scaleY(1.6);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+
+    /* box-shadow : first one is x-coordinate , second one is y-coordinate , third one is blur
+       */
+    box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  /* To use the after state when& is hover =>>> &:hover::after { } */
+  /* NOW ACCESSING THE PSEUDO CHILD ELEMENT OF& WHICH IS JUST CREATED ABOVE */
+
+  &--green {
+    font-size: $font-size-bg;
+    background-color: $color-primary;
+    color: $color-white;
+    text-transform: uppercase;
+  }
+
+  &--full {
+    background-color: $color-white;
+    color: $color-black-m;
+    text-transform: uppercase;
+    font-size: $font-size-bg;
+    letter-spacing: 1px;
+  }
+
+  &--animated {
+    animation: moveBottomIn 0.5s ease-out;
+    animation-delay: 0.75s;
+    animation-fill-mode: backwards;
+
+    /* apply the 0% state of animation at the starting (this make element invisible for 3s ( due opacity 0 at 0%)) */
+    /* animation-fill-mode: backwards; */
+  }
+}
+
+.btn-text {
+  display: inline-block;
+  color: $color-primary;
+  text-decoration: none;
+
+  // border-bottom should be set before
+  border-bottom: 1px solid currentColor;
+  font-size: $font-size-bg;
+  padding: 0.8rem;
+  transition: all 0.3s;
+
+  @include press;
+
+  &:hover,
+  &:active {
+    background-color: $color-primary;
+    color: $color-white;
+    border-bottom: 1px solid transparent;
+  }
+}

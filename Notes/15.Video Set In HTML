@@ -1,0 +1,5 @@
+<video class="video__content" autoplay muted loop>
+            <source src="img/video.mp4" />
+            <source src="img/video.webm" />
+            Your browser is not supported!
+          </video>

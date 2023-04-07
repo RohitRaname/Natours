@@ -1,0 +1,3 @@
+- the content which should be used should be in component and top element class name should be like story,review,card,features,button
+
+- non-reusable content be in main css of page like home,FAQ etc.

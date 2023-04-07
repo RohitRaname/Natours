@@ -1,0 +1,5 @@
+/* // to add own selection of text  */
+::selection{
+    background:$color-primary;
+    text:$color-white;
+}

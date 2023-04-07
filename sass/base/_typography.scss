@@ -1,0 +1,167 @@
+body {
+  font-family: "Lato", sans-serif;
+  color: $color-black-m;
+  font-weight: 400;
+  line-height: $default-line-height;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  // color: $color-white;
+  /* Hide the shaking of animated element in the end */
+  backface-visibility: hidden;
+  font-size: 4.4rem;
+  line-height: 1.2;
+
+  @include respond(tab-port) {
+    font-size: 3.6rem;
+  }
+
+  @include respond(phone) {
+    font-size: 3rem;
+  }
+
+  &--main,
+  &-sub {
+    display: block;
+  }
+
+  &--main {
+    font-size: 6.2rem;
+    font-weight: 400;
+    letter-spacing: 4.8rem;
+    animation-name: moveLeftIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    line-height: 1.2;
+
+    @include respond(tab-port) {
+      font-size: 5.6rem;
+      letter-spacing: 3.8rem;
+    }
+
+    @include respond(phone) {
+      font-size: 4.4rem;
+      letter-spacing: 2.4rem;
+    }
+    /* 
+animation-delay: 10s;
+animation-timing-function: ease-in;
+*/
+  }
+
+  &--sub {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 0.6rem;
+    animation: moveRightIn 2s ease-out;
+    letter-spacing: 2.2rem;
+    font-weight: 600;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+      letter-spacing: 1.8rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      letter-spacing: 0.6rem;
+    }
+  }
+}
+
+.heading-secondary,
+.heading-tertiary,
+.heading-quad,
+.heading-pent {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-black-d;
+  line-height: 1.6;
+}
+
+.heading-secondary {
+  font-size: 3.6rem;
+
+  @include respond(tab-port) {
+    font-size: 3.2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.6rem;
+  }
+
+  letter-spacing: 1.75px;
+  transition: all 0.3s;
+  background: linear-gradient(to right, $color-primary, $color-primary--dark);
+
+  // this is done so it can be supportable for other
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  // like box-shadow:
+  text-shadow: 0.5rem 1rem 2rem rgba($color-black, $alpha: 0.2);
+
+  &:hover {
+    transform: skewY(2deg) scale(1.1);
+  }
+}
+
+.heading-tertiary {
+  letter-spacing: 0.5px;
+  font-size: 2.4rem;
+
+  @include respond(tab-port) {
+    font-size: 2.2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
+
+.heading-quad {
+  letter-spacing: 0.3px;
+  font-size: 2rem;
+  @include respond(phone) {
+    font-size: 1.8rem;
+  }
+}
+
+.heading-pent {
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
+}
+
+// dont change media queries on small text
+.paragraph {
+  font-size: $default-font-size;
+  color: $color-black-l;
+  line-height: $line-height-lg;
+
+  @include respond(phone) {
+    font-size: 1.6rem;
+  }
+}
+
+// base typrography layouts utils components
+
+// this is who we are
+
+//
+
+// phone with 2k display 
+// @media (min-resolution:192dpi)
+// -> 600px === 1200px
+
+// for phone we will 1200px as phone is under 600px (phone are generally 2k)
+// @media (min-resolution: 192dpi) and (min-width: 35em), (min-widht: 2000px) => for low resolution desktop {
+// background-color:  hero.jpg; 2000px
+// }
+
+// what about the 1k desktop source source img
