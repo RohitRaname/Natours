@@ -7,7 +7,7 @@
 }
 
 // to show selection color when someone want to copt the text
-::selection{
+::selection {
   background: $color-primary;
   color: $color-white;
 }
@@ -24,15 +24,15 @@ body {
 html {
   /* default browser font size : 16px  */
   /* font size prefer 10px so to do easy calculation [1rem = 10px] */
-  font-size: 62.5%;
+  font-size: 56.5%;
 
   /* force inherit as text are inherited by default to inherit other we force them */
   box-sizing: inherit;
 
   // Order big to small resolution as if small display satsifies the condition so also the big one as we are using the max(equal and less) so if big one are in last and the resolution is around 550px , big one device condition will overwrite the small one  so there is no reason it to be set into 600px so that why we placed the small one in last
-  @include respond(big-desktop) {
-    font-size: 75%; // 12px
-  }
+  // @include respond(big-desktop) {
+  //   font-size: 75%; // 12px
+  // }
 
   @include respond(tab-land) {
     font-size: 56.25%;
@@ -46,4 +46,3 @@ html {
     font-size: 44.25%;
   }
 }
-
